@@ -1,4 +1,4 @@
-const ContactsList = ({ contactsArray }) => {
+const ContactsList = ({ contactsArray, onDeleteBtnClick }) => {
   return (
     <ul>
       {contactsArray.map(({ id, name, number }) => {
@@ -7,7 +7,14 @@ const ContactsList = ({ contactsArray }) => {
             <span>
               {name}: {number}
             </span>
-            <button>Delete</button>
+            <button
+              type='button'
+              onClick={() => {
+                onDeleteBtnClick(id);
+              }}
+            >
+              Delete
+            </button>
           </li>
         );
       })}
