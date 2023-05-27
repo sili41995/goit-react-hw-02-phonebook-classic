@@ -1,24 +1,28 @@
+import css from 'components/ContactsList/ContactsList.styled';
+
+const { List, Item, ItemLabel, ItemButton } = css;
+
 const ContactsList = ({ contactsArray, onDeleteBtnClick }) => {
   return (
-    <ul>
+    <List>
       {contactsArray.map(({ id, name, number }) => {
         return (
-          <li key={id}>
-            <span>
+          <Item key={id}>
+            <ItemLabel>
               {name}: {number}
-            </span>
-            <button
+            </ItemLabel>
+            <ItemButton
               type='button'
               onClick={() => {
                 onDeleteBtnClick(id);
               }}
             >
               Delete
-            </button>
-          </li>
+            </ItemButton>
+          </Item>
         );
       })}
-    </ul>
+    </List>
   );
 };
 
