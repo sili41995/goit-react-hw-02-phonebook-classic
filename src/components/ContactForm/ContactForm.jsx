@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import css from 'components/ContactForm/ContactForm.styled';
@@ -5,9 +6,20 @@ import css from 'components/ContactForm/ContactForm.styled';
 const { Form, FormInput, FormLabel, FormButton } = css;
 
 class ContactForm extends Component {
+  static defaultProps = {
+    initialValue: '',
+  };
+
+  static propTypes = {
+    state: PropTypes.exact({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }),
+  };
+
   state = {
-    name: '',
-    number: '',
+    name: this.props.initialValue,
+    number: this.props.initialValue,
   };
 
   nameInputId = nanoid();
@@ -30,8 +42,8 @@ class ContactForm extends Component {
 
   formReset = () => {
     this.setState({
-      name: '',
-      number: '',
+      name: this.props.initialValue,
+      number: this.props.initialValue,
     });
   };
 

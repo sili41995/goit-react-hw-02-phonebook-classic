@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from 'components/ContactsList/ContactsList.styled';
 
 const { List, Item, ItemLabel, ItemButton } = css;
@@ -24,6 +25,17 @@ const ContactsList = ({ contactsArray, onDeleteBtnClick }) => {
       })}
     </List>
   );
+};
+
+ContactsList.propTypes = {
+  contactsArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  onDeleteBtnClick: PropTypes.func.isRequired,
 };
 
 export default ContactsList;

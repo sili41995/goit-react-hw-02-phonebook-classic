@@ -2,11 +2,25 @@ import React, { Component } from 'react';
 import ContactForm from 'components/ContactForm';
 import ContactsList from 'components/ContactsList';
 import Filter from 'components/Filter';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import css from 'components/App/App.styled';
 
 const { Container, Title, Subtitle } = css;
 class App extends Component {
+  static propTypes = {
+    state: PropTypes.exact({
+      contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          number: PropTypes.string.isRequired,
+        })
+      ),
+      filter: PropTypes.string.isRequired,
+    }),
+  };
+
   state = {
     contacts: [],
     filter: '',
