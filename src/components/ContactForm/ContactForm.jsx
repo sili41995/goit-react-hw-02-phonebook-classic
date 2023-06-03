@@ -9,10 +9,6 @@ const INITIAL_STATE = {
   number: '',
 };
 
-const INITIAL_STATE = {
-  name: '',
-  number: '',
-};
 class ContactForm extends Component {
   state = {
     ...INITIAL_STATE,
