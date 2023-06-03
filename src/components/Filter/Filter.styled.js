@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 
-const FilterContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
 `;
 
-const FilterLabel = styled.label``;
+const Label = styled.label``;
 
-const FilterInput = styled.input`
+const Input = styled.input`
   width: 200px;
 `;
 
-const css = { FilterContainer, FilterLabel, FilterInput };
+const css = { Container, Label, Input };
 
 export default css;

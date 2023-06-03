@@ -8,13 +8,13 @@ const Form = styled.form`
   border: 1px solid black;
 `;
 
-const FormInput = styled.input`
+const Input = styled.input`
   width: 300px;
 `;
 
-const FormLabel = styled.label``;
+const Label = styled.label``;
 
-const FormButton = styled.button`
+const Button = styled.button`
   width: 200px;
   height: 30px;
   &:hover {
@@ -23,6 +23,6 @@ const FormButton = styled.button`
   }
 `;
 
-const css = { Form, FormInput, FormLabel, FormButton };
+const css = { Form, Input, Label, Button };
 
 export default css;

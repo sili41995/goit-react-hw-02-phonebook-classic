@@ -13,15 +13,15 @@ const Item = styled.li`
   align-items: center;
 `;
 
-const ItemLabel = styled.span``;
+const Label = styled.span``;
 
-const ItemButton = styled.button`
+const Button = styled.button`
   &:hover {
     background-color: skyblue;
     color: white;
   }
 `;
 
-const css = { List, Item, ItemLabel, ItemButton };
+const css = { List, Item, Label, Button };
 
 export default css;

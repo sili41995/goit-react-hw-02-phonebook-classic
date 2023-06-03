@@ -1,27 +1,29 @@
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 import css from 'components/Filter/Filter.styled';
 
-const { FilterContainer, FilterLabel, FilterInput } = css;
+const { Container, Label, Input } = css;
 
-const Filter = ({ filterValue, onChangeFilter }) => {
+const Filter = ({ value, onChangeInput }) => {
   const filterInputId = nanoid();
+
   return (
-    <FilterContainer>
-      <FilterLabel htmlFor={filterInputId}>Find contacts by name</FilterLabel>
-      <FilterInput
+    <Container>
+      <Label htmlFor={filterInputId}>Find contacts by name</Label>
+      <Input
         type='text'
         id={filterInputId}
-        onChange={onChangeFilter}
-        value={filterValue}
+        value={value}
+        onChange={onChangeInput}
+        name='filter'
       />
-    </FilterContainer>
+    </Container>
   );
 };
 
 Filter.propTypes = {
-  filterValue: PropTypes.string.isRequired,
-  onChangeFilter: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onChangeInput: PropTypes.func.isRequired,
 };
 
 export default Filter;
